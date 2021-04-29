@@ -27,7 +27,6 @@ a:hover, button:hover {
 
 /* Header Start */
 
-/* Resolver altura */
 .header {
     width: 100%;
     height: 80vh;        
@@ -35,6 +34,7 @@ a:hover, button:hover {
     position: relative;
     background: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.295)), url(images/desktop/image-hero.jpg);
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;   
 }
 
@@ -74,7 +74,7 @@ a:hover, button:hover {
 }
 
 
-.subtitle h1 {
+.header .subtitle h1 {
     
     color: #fff;
     border: 2px solid #fff;
@@ -89,4 +89,53 @@ a:hover, button:hover {
 
 }
 
+/* Header End */
 
+/* Main Content Start */
+/* Headline */
+
+.headline {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;        
+    padding: 3rem 0 0 10rem;
+    width: 100%;
+
+}
+
+.headline .hImgCont {
+    position: relative;
+          
+      
+}
+
+
+
+.headline .leaderVR {   
+    text-align: left; 
+    position: relative;           
+    margin: 20rem 0 0 -11rem;                
+    padding: 7rem;
+    background-color: hsl(0, 24%, 96%);
+    z-index: 2;
+    width: 100%;
+}
+
+.headline .leaderVR h2 {
+    font-size: 3rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    width: 25rem;
+
+}
+
+.headline .leaderVR p {
+    font-family: 'Alata', sans-serif;
+    color: hsl(0, 0%, 55%);    
+    line-height: 1.5;    
+    width: 25rem;
+    
+}
