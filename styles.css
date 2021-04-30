@@ -30,8 +30,8 @@ a:hover, button:hover {
 .header {
     width: 100%;
     height: 80vh;        
-    padding: 6rem 10rem;
-    position: relative;
+    padding: 6rem 10rem 6rem 10rem;
+    position: relative;       
     background: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.295)), url(images/desktop/image-hero.jpg);
     background-size: cover;
     background-position: center;
@@ -42,9 +42,20 @@ a:hover, button:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
-.header .nav .navmenu {
+
+.header .logoNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.header .logoNav .navmenu {
     margin-left: 10rem;
     flex: 1;
     display: flex;
@@ -54,13 +65,13 @@ a:hover, button:hover {
 
 }
 
-.header .nav .navmenu li {
+.header .logoNav .navmenu li {
     margin-right: 2.5rem;
     position: relative;
     
 }
 
-.header .nav .navmenu li a {
+.header .logoNav .navmenu li a {
     color: hsl(0, 0%, 100%);
     transition: 1s;
     font-family: 'Alata', sans-serif;
@@ -99,13 +110,15 @@ a:hover, button:hover {
     position: relative;
     align-items: center;
     justify-content: center;        
-    padding: 3rem 0 0 10rem;
+    padding: 2rem 10rem 0 26.5rem;
     width: 100%;
 
 }
 
 .headline .hImgCont {
     position: relative;
+    width: 100%;
+      
           
       
 }
@@ -115,7 +128,7 @@ a:hover, button:hover {
 .headline .leaderVR {   
     text-align: left; 
     position: relative;           
-    margin: 20rem 0 0 -11rem;                
+    margin: 20rem 6rem 0 -11rem;                
     padding: 7rem;
     background-color: hsl(0, 24%, 96%);
     z-index: 2;
@@ -138,4 +151,40 @@ a:hover, button:hover {
     line-height: 1.5;    
     width: 25rem;
     
+}
+
+/* Headline end */
+
+/* Portfolio Start */
+
+.portfolio {    
+    position: relative;
+    align-items: center;
+    justify-content: center;  
+    padding: 2rem 10rem 0 16rem;          
+    width: 100%;
+
+}
+
+.portfolio .pStart {
+    display: flex;
+    position: relative;
+    align-items: center;   
+    justify-content: space-between;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.portfolio .pcard-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1.25rem;
+  
+
+}
+
+.portfolio .pcard-container .card {   
+    position: relative;
+    width: 100%;
 }
