@@ -10,6 +10,8 @@
 body, html {
     overflow-x: hidden;
     background-color: hsl(0, 24%, 96%);
+    font-family: 'Alata', sans-serif;
+    font-weight: 400;
 }
 
 a {
@@ -74,7 +76,7 @@ a:hover, button:hover {
 .header .logoNav .navmenu li a {
     color: hsl(0, 0%, 100%);
     transition: 1s;
-    font-family: 'Alata', sans-serif;
+   
 
 }
 
@@ -146,7 +148,6 @@ a:hover, button:hover {
 }
 
 .headline .leaderVR p {
-    font-family: 'Alata', sans-serif;
     color: hsl(0, 0%, 55%);    
     line-height: 1.5;    
     width: 25rem;
@@ -215,3 +216,59 @@ a:hover, button:hover {
     font-weight: 300;
     
 }
+
+/* Portfolio End */
+
+/* Footer Start */
+
+footer {
+    background-color: hsl(0, 0%, 0%);
+    padding: 2.5rem 7rem;
+    color:hsl(0, 0%, 100%);    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+}
+
+.logocont a img {
+    width: 150px;
+}
+
+
+
+footer .l-column .navmenuf {
+    display: flex;
+    justify-content: space-between;    
+    margin: 1rem 9rem 0 0;
+    width: 100%;        
+}
+
+
+
+footer .r-column .social-btns {
+    display: flex;        
+    justify-content: flex-end;
+}
+
+footer .r-column .social-btns a img {
+    padding-left: 1.25rem;
+  
+}
+
+footer .r-column p {    
+    font-size: 0.8rem;
+    padding-top: 1.25rem;
+    color: hsl(0, 0%, 55%)
+  
+}
+
+footer .attribution {
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+    
+}
+
+
