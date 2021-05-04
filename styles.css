@@ -9,7 +9,7 @@
 
 body, html {
     overflow-x: hidden;
-    background-color: hsl(0, 24%, 96%);
+    background-color: hsl(0, 0%, 100%);
     font-family: 'Alata', sans-serif;
     font-weight: 400;
 }
@@ -32,33 +32,46 @@ a:hover, button:hover {
 .header {
     width: 100%;
     height: 80vh;        
-    padding: 6rem 10rem 6rem 10rem;
+    padding: 6rem 5rem 6rem 10rem;
     position: relative;       
     background: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.295)), url(images/desktop/image-hero.jpg);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;   
+    background-repeat: no-repeat;
+    min-width: 0;   
+    min-height: 0;
 }
 
 .header .nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;    
     
 }
+
 
 
 .header .logoNav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;    
     width: 100%;
     top: 0;
     left: 0;
 }
 
-.header .logoNav .navmenu {
-    margin-left: 10rem;
+.header .logoNav a img {
+    margin-right: 5rem;
+}
+
+.header .logoNav .btn-nav {
+    display: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.header .logoNav .navmenu {    
     flex: 1;
     display: flex;
     position: relative;
@@ -132,7 +145,7 @@ a:hover, button:hover {
     position: relative;           
     margin: 20rem 6rem 0 -11rem;                
     padding: 7rem;
-    background-color: hsl(0, 24%, 96%);
+    background-color: hsl(0, 0%, 100%);
     z-index: 2;
     width: 100%;
 }
@@ -177,9 +190,22 @@ a:hover, button:hover {
 
 }
 
-.portfolio .pStart button {      
+.portfolio .pStart .btn-seeAll {      
     text-transform: uppercase;
-    background-color:hsl(0, 24%, 96%);
+    background-color:hsl(0, 0%, 100%);
+    font-family: 'Alata', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+    border: solid 1px black;   
+    padding: 0.6rem 2.8rem;
+    
+    
+}
+
+.portfolio .mob-seeAll {
+    display: none;      
+    text-transform: uppercase;
+    background-color:hsl(0, 0%, 100%);
     font-family: 'Alata', sans-serif;
     font-weight: 400;
     letter-spacing: 0.3rem;
@@ -238,7 +264,7 @@ footer {
     width: 100%;
 }
 
-.logocont a img {
+footer .logocont a img {
     width: 150px;
 }
 
@@ -263,19 +289,13 @@ footer .r-column .social-btns a img {
   
 }
 
-footer .r-column p {    
-    font-size: 0.8rem;
+footer .r-column p {     
     padding-top: 1.25rem;
-    color: hsl(0, 0%, 55%)
+    color: hsl(0, 0%, 41%);
+    margin-left: 2rem;
   
 }
 
-footer .attribution {
-    position: absolute;
-    bottom: 5%;
-    left: 30%;
-    
-}
 
 /* Footer end */
 
@@ -327,7 +347,7 @@ footer .attribution {
     /* Portfolio Start */
 
     .portfolio {         
-        padding: 8rem 4rem 12rem 4rem;                 
+        padding: 8rem 4rem 8rem 4rem;                 
     
     }
     
@@ -365,8 +385,7 @@ footer .attribution {
     
     .portfolio .mobpcard-container .card h2 {
         position: absolute;
-        transform: translateY(-80px) translateX(20px);
-   
+        transform: translateY(-80px) translateX(20px);   
         width: 13%;
         color:hsl(0, 0%, 100%);
         font-size: 1.7rem;
@@ -376,7 +395,164 @@ footer .attribution {
         
     }
 
-
-
 }
 
+@media (max-width: 850px) {
+    
+    .header .logoNav  {
+        flex-direction: column;
+    }
+
+    .header .logoNav .navmenu {
+        margin-top: 2rem;
+    }
+
+    .header .subtitle h1 {
+        font-size: 4rem;
+
+    }
+    
+    footer {
+        flex-direction: column;      
+        text-align: center;
+        padding: 3.73rem 1.6rem;
+        
+    }
+
+
+
+    footer .l-column .navmenuf {
+        flex-direction: column;
+    
+
+  
+    }
+
+    footer .logocont a img {
+        margin-bottom: 1.3rem;
+    }
+
+    footer .l-column .navmenuf li {
+        margin-bottom: 1.3rem;
+    }
+
+    footer .r-column .social-btns {
+        padding-left: 0;
+        margin-top: 1.8rem;
+        position: relative;
+        justify-content: center;
+    }
+
+    footer .r-column .social-btns a img {
+        justify-content: space-between;
+
+    }
+}
+
+@media (max-width: 750px) {
+
+    .header {
+        padding: 3rem 2rem;
+   
+        
+       
+
+    }
+
+    .header .logoNav  {
+        flex-direction: row;
+    }
+
+    .header .logoNav .navmenu {
+        display: none;
+
+    }
+
+    .header .logoNav .btn-nav {
+        display: flex;
+
+    }
+
+    .header .subtitle {
+        max-width: 30rem;
+    }
+
+    .header .subtitle h1 {
+        font-size: 3rem;
+    }
+
+    .headline {
+        padding: 5rem 2rem 1rem;
+    }
+
+    .portfolio {
+        display: flex;
+        flex-direction: column;        
+        text-align: center;
+        justify-content: center;
+        padding: 5rem 1.5rem;
+    }
+
+    .portfolio .pStart {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      
+        
+    }
+
+    .portfolio .pStart h2 {
+        font-size: 2.5rem;              
+    }
+
+    .portfolio .pStart .btn-seeAll {
+        display: none;
+
+    }
+
+    .portfolio .mob-seeAll {
+        position: relative;
+        width: 15rem;        
+        display: block;
+        bottom: 0;
+        margin-top: 2rem;
+        transform: translateX(50%)
+    }
+
+
+    .portfolio .mobpcard-container .card h2 {
+        text-align: left;
+        width: 35%;
+        font-size: 2rem;
+    } 
+    
+}
+
+@media (max-width: 650px) {
+
+    .portfolio .mobpcard-container {
+        grid-template-columns: 1fr;
+      
+    }
+
+    .portfolio .mobpcard-container .card {  
+        height: 8rem;      
+        display: grid;
+        grid-gap: 1rem; 
+        padding-bottom: 2rem;
+    }
+
+    .portfolio .mobpcard-container .card img {
+        filter:brightness(80%);
+      
+    }
+
+    .portfolio .mobpcard-container .card h2 {
+        font-size: 1.7rem;  
+        margin: 0 0 5rem 2rem;
+        transform: translateY(40px);
+        width: 35%;   
+                 
+        
+    } 
+}
