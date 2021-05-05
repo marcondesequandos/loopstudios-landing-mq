@@ -93,6 +93,13 @@ a:hover, button:hover {
 
 }
 
+.header .mobNav {
+    color: hsl(0, 0%, 100%);
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
 .header .subtitle {       
     position: relative;
     top: 30%;
@@ -171,9 +178,18 @@ a:hover, button:hover {
 
 /* Portfolio Start */
 
-.portfolio {         
-    padding: 5rem 10rem 12rem 7rem;                 
 
+
+.portfolio {
+    width: 100%;         
+    padding: 5rem 10rem 12rem 7rem;
+    display: flex; 
+    justify-content: center;                 
+
+}
+
+.pcontainer {
+    max-width: 100rem;
 }
 
 .portfolio .pStart {
@@ -202,8 +218,12 @@ a:hover, button:hover {
     
 }
 
+.portfolio .mob-btncont {
+    display: none;
+}
+
 .portfolio .mob-seeAll {
-    display: none;      
+       
     text-transform: uppercase;
     background-color:hsl(0, 0%, 100%);
     font-family: 'Alata', sans-serif;
@@ -222,7 +242,7 @@ a:hover, button:hover {
 .portfolio .pcard-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 1.25rem;
+    grid-gap: 1.4rem;
   
 
 }
@@ -305,14 +325,18 @@ footer .r-column p {
 
     /* Headline */
 
+    
+    
     .headline {
         flex-direction: column;
-        padding: 5rem 10rem 0rem;
+        justify-content: center;
+        padding: 8rem 2rem 0rem;
 
     }
 
-    .headline .hImgCont {        
-        width: 100%;                           
+    .headline .hImgCont {  
+        max-width: 55rem;               
+                                    
         
     }
 
@@ -325,8 +349,8 @@ footer .r-column p {
     .headline .leaderVR {  
         text-align: center;      
         margin: 0;
-        padding: 4rem 3rem 0;
-        width: 100%;           
+        padding: 4rem 0 0 0;
+        width: 80%;           
 
     }
 
@@ -482,8 +506,18 @@ footer .r-column p {
     }
 
     .headline {
-        padding: 5rem 2rem 1rem;
+        padding: 5rem 1.5rem 1rem;
     }
+
+    .headline .hImgCont {
+        width: 100%;
+    }
+
+    .headline .leaderVR {
+        width: 100%;
+    }
+
+ 
 
     .portfolio {
         display: flex;
@@ -510,28 +544,36 @@ footer .r-column p {
 
     }
 
-    .portfolio .mob-seeAll {
-        position: relative;
-        width: 15rem;        
+    .portfolio .mob-btncont {
+        display: flex;
+        justify-content: center;
+    }
+
+    .portfolio .mob-seeAll {                  
         display: block;
         bottom: 0;
         margin-top: 2rem;
-        transform: translateX(50%)
+        
     }
 
 
     .portfolio .mobpcard-container .card h2 {
         text-align: left;
-        width: 35%;
-        font-size: 2rem;
+        width: 20%;
+        font-size: 1.8rem;
     } 
     
 }
 
 @media (max-width: 650px) {
 
+    .portfolio {
+        padding: 5rem 1.5rem;
+    }
+    
     .portfolio .mobpcard-container {
         grid-template-columns: 1fr;
+        grid-gap: 1.5rem;
       
     }
 
@@ -548,11 +590,72 @@ footer .r-column p {
     }
 
     .portfolio .mobpcard-container .card h2 {
-        font-size: 1.7rem;  
+        font-size: 1.6rem;  
         margin: 0 0 5rem 2rem;
-        transform: translateY(40px);
-        width: 35%;   
+        transform: translateY(60px) translateX(-10px);
+        width: 50%;   
                  
         
     } 
 }
+
+@media (max-width: 460px) {
+
+    .headline .leaderVR {
+        padding: 2rem 1rem 0;
+    }
+    .headline .leaderVR h2 {
+        font-size: 2rem;
+    }
+
+    .headline .leaderVR p {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .header .subtitle h1 {        
+        font-size: 2.7rem;
+        padding: 2.5rem 1.6rem 1.7rem;
+
+    }
+}
+
+@media (max-width: 360px) {
+
+    .header .subtitle h1 {        
+        font-size: 2.2rem;
+        padding: 2.5rem 1.6rem 1.7rem;
+
+    }
+
+    .portfolio .mobpcard-container .card {
+        padding-bottom: 0;
+    }
+
+    .portfolio .mobpcard-container .card img {
+        height: 100%;
+    }
+
+
+
+    .pStart h2 {
+        font-size: 2rem !important;
+       
+    }
+
+    .header .logoNav a img {
+        margin-right: 3rem;
+    }
+
+    .portfolio .mobpcard-container .card h2{
+        font-size: 1.3rem;
+    }
+
+}
+
+
+
+
+
