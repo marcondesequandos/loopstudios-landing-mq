@@ -40,9 +40,11 @@ a:hover, button:hover {
     background-repeat: no-repeat;
     min-width: 0;   
     min-height: 0;
+    display: grid;
+    
 }
 
-.header .nav {
+.header .navmenu {
     display: flex;
     align-items: center;
     justify-content: space-between;    
@@ -51,11 +53,14 @@ a:hover, button:hover {
 
 
 
+
+
+
 .header .logoNav {
-    display: flex;
+    display: flex;    
     align-items: center;
     justify-content: space-between;    
-    width: 100%;
+    max-width: 111rem;
     top: 0;
     left: 0;
 }
@@ -71,7 +76,7 @@ a:hover, button:hover {
     border: none;
 }
 
-.header .logoNav .navmenu {    
+.header .logoNav .nav__menu {    
     flex: 1;
     display: flex;
     position: relative;
@@ -80,13 +85,22 @@ a:hover, button:hover {
 
 }
 
-.header .logoNav .navmenu li {
+.nav__menu--hidden {
+    visibility: visible;
+    top: unset;
+    transition: unset;
+    height: unset;
+    
+
+}
+
+.header .logoNav .nav__menu li {
     margin-right: 2.5rem;
     position: relative;
     
 }
 
-.header .logoNav .navmenu li a {
+.header .logoNav .nav__menu li a {
     color: hsl(0, 0%, 100%);
     transition: 1s;
    
@@ -427,7 +441,7 @@ footer .r-column p {
         flex-direction: column;
     }
 
-    .header .logoNav .navmenu {
+    .header .logoNav .nav__menu {
         margin-top: 2rem;
     }
 
@@ -485,17 +499,70 @@ footer .r-column p {
 
     .header .logoNav  {
         flex-direction: row;
+        
     }
 
-    .header .logoNav .navmenu {
-        display: none;
+    .logoNav--scroll {
+        position: fixed;
+        background-color: black;        
+        width: 200rem;
+        padding: 3rem 2.4rem;
+        z-index: 100;
+    }
+
+
+    .nav__menu--hidden {
+        visibility: hidden;
+        top: -100vh;
+        transition: all 0.8s;
+        
 
     }
 
-    .header .logoNav .btn-nav {
+    .nav__menu {
+        background-color: #000;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        -webkit-transition: all 0.8s;
+        transition: all 0.8s;
+        z-index: 10;
+        width: 100%;
+        padding: 22rem 2.4rem 0;
+        display: -ms-grid;
+        display: grid;
+        -ms-flex-line-pack: start;
+        align-content: start;
+        justify-items: start;
+        grid-gap: 2rem;
+    }
+
+    
+  
+
+ 
+
+    .header .logoNav nav { 
+        position: absolute;
+        top:2px;
+        right:20px;            
+        width: 26px; 
+        margin-left: 5px;
+       
+                     
+    }
+
+ 
+
+    .header .logoNav nav .btn-nav {
+        position: relative;
         display: flex;
-
+        
     }
+
+
 
     .header .subtitle {
         max-width: 30rem;
