@@ -14,6 +14,10 @@ body, html {
     font-weight: 400;
 }
 
+
+
+
+
 a {
     text-decoration: none;
 }
@@ -27,12 +31,20 @@ a:hover, button:hover {
     cursor: pointer;
 }
 
+
+.container {
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: center;
+    grid-gap: 9.6rem;
+}
+
 /* Header Start */
 
 .header {
     width: 100%;
     height: 80vh;        
-    padding: 6rem 5rem 6rem 10rem;
+    padding: 6rem 5rem 6rem 6rem;
     position: relative;       
     background: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.295)), url(images/desktop/image-hero.jpg);
     background-size: cover;
@@ -40,16 +52,15 @@ a:hover, button:hover {
     background-repeat: no-repeat;
     min-width: 0;   
     min-height: 0;
-    display: grid;
     
 }
 
-.header .navmenu {
+/* .header .navmenu {
     display: flex;
     align-items: center;
     justify-content: space-between;    
     
-}
+} */
 
 
 
@@ -57,42 +68,70 @@ a:hover, button:hover {
 
 
 .header .logoNav {
-    display: flex;    
+    display: flex;
+    position: relative;    
     align-items: center;
     justify-content: space-between;    
     max-width: 111rem;
+    padding: 0;
     top: 0;
     left: 0;
 }
 
-.header .logoNav a img {
-    margin-right: 5rem;
+.header .logoNav .lsLogo {   
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    position: relative;
+    z-index: 20;
 }
 
-.header .logoNav .btn-nav {
+.header .logoNav a img {
+    margin-right: 5rem;    
+}
+
+.header .logoNav .navmenu .btn-nav {
     display: none;
     background-color: transparent;
     cursor: pointer;
     border: none;
+    
 }
 
-.header .logoNav .nav__menu {    
-    flex: 1;
+.header .logoNav .navmenu {
     display: flex;
     position: relative;
-    justify-content: flex-end;  
-    align-items: center;
+}
+
+.nav__menu {    
+    background-color: unset;
+    position: relative;
+    width: unset;
+    height: unset;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 2rem;
+    align-content: start;
+    justify-items: start;
+    padding: 0;
+    left: 0;
 
 }
 
 .nav__menu--hidden {
     visibility: visible;
     top: unset;
-    transition: unset;
     height: unset;
-    
-
 }
+
+
+/* 
+.nav__menu--hidden {    
+    top: -100vh;
+    transition: all 0.8s;
+} */
+
+
 
 .header .logoNav .nav__menu li {
     margin-right: 2.5rem;
@@ -115,8 +154,11 @@ a:hover, button:hover {
 }
 
 .header .subtitle {       
-    position: relative;
-    top: 30%;
+    display: grid;
+    align-content: center;
+    width: 100%;
+    padding-top: 10rem;
+
 
 }
 
@@ -291,7 +333,7 @@ footer {
     background-color: hsl(0, 0%, 0%);
     padding: 2.5rem 7rem;
     color:hsl(0, 0%, 100%);    
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     position: absolute;
@@ -355,7 +397,7 @@ footer .r-column p {
     }
 
     .headline .hImgCont img{
-        width: 100%;
+        max-width: 70rem;
     }
 
 
@@ -436,7 +478,9 @@ footer .r-column p {
 }
 
 @media (max-width: 850px) {
-    
+
+
+
     .header .logoNav  {
         flex-direction: column;
     }
@@ -490,30 +534,49 @@ footer .r-column p {
 @media (max-width: 750px) {
 
     .header {
-        padding: 3rem 2rem;
-   
-        
-       
-
+        background-image: url(../images/mobile/image-hero.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 4rem 2.4rem;
+        height: 65rem;
+        width: 100%;
+        background-position: center;
+        position: relative;
+        display: -ms-grid;
+        display: grid;
+        justify-items: center;
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
+    
     }
 
     .header .logoNav  {
+        position: fixed;
         flex-direction: row;
+        padding: 4rem 2.4rem;
+        z-index: 10;
+        width: 100%;
+      
+
         
     }
+
+  
+
 
     .logoNav--scroll {
         position: fixed;
         background-color: black;        
-        width: 200rem;
+        width: 100rem;
         padding: 3rem 2.4rem;
-        z-index: 100;
+        z-index: 10;
     }
 
 
-    .nav__menu--hidden {
+    .header .logoNav .nav__menu--hidden {
         visibility: hidden;
-        top: -100vh;
+        top: -200vh;
         transition: all 0.8s;
         
 
@@ -523,20 +586,42 @@ footer .r-column p {
         background-color: #000;
         color: #fff;
         position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
+        top: -100px;
+        grid-auto-flow: unset;
+        left: -95vw;
+        height: 150vh;
         -webkit-transition: all 0.8s;
         transition: all 0.8s;
         z-index: 10;
-        width: 100%;
-        padding: 22rem 2.4rem 0;
-        display: -ms-grid;
+        width: 150vw;
+        padding: 22rem 3.4rem 0;        
         display: grid;
         -ms-flex-line-pack: start;
         align-content: start;
-        justify-items: start;
-        grid-gap: 2rem;
+        justify-items: start;        
+        
+    }
+
+    .nav__menu-item {    
+        font-size: 2.4rem;   
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #fff;        
+        position: relative;        
+        transition: all 0.2s;
+    }
+
+    
+    @keyframes fadeInTop {
+        0% {
+        opacity: 0;
+        transform: translateY(-0.75rem);
+        }
+        100% {
+        transform: translateY(0);
+        opacity: 1;
+        }
     }
 
     
@@ -544,21 +629,42 @@ footer .r-column p {
 
  
 
-    .header .logoNav nav { 
-        position: absolute;
-        top:2px;
-        right:20px;            
+    /* .header .logoNav nav { 
+        display: flex;
+        justify-content: flex-end;
+        position: relative;   
         width: 26px; 
-        margin-left: 5px;
+        margin-left: clamp(10px, 300%, 150px);
        
                      
-    }
+    } */
 
+  
+
+    .header .logoNav .navmenu {
+        position: relative;        
+        display: flex;
+        justify-content: flex-end;
+        max-width: 100rem;                   
+        
+        
+        
+    }
+  
  
 
-    .header .logoNav nav .btn-nav {
+    .header .logoNav .navmenu .btn-nav {
+        position: relative;        
+        display: flex;                  
+        z-index: 20;
+        
+        
+    }
+
+    .header .logoNav--scroll nav .btn-nav {
         position: relative;
         display: flex;
+        z-index: 20;
         
     }
 
