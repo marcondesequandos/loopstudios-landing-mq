@@ -3,18 +3,30 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
     font-size: 15px;
 }
 
-body, html {
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
     overflow-x: hidden;
-    background-color: hsl(0, 0%, 100%);
-    font-family: 'Alata', sans-serif;
-    font-weight: 400;
 }
 
+body {
+    font-family: 'Alata', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;;
+    color: black;
+    overflow-x: hidden;
+    
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 
 
@@ -44,7 +56,7 @@ a:hover, button:hover {
 .header {
     width: 100%;
     height: 80vh;        
-    padding: 6rem 5rem 6rem 6rem;
+    padding: 6rem 20rem 6rem 6rem;
     position: relative;       
     background: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.295)), url(images/desktop/image-hero.jpg);
     background-size: cover;
@@ -52,6 +64,9 @@ a:hover, button:hover {
     background-repeat: no-repeat;
     min-width: 0;   
     min-height: 0;
+    align-items: start;
+    justify-items: center;
+    overflow: hidden;
     
 }
 
@@ -81,13 +96,15 @@ a:hover, button:hover {
 .header .logoNav .lsLogo {   
     display: flex;
     align-items: center;
-    margin-right: 30px;
-    position: relative;
+    width: clamp(144px, 70%, 172px);    
+    margin-right: 50px;    
     z-index: 20;
 }
 
-.header .logoNav a img {
-    margin-right: 5rem;    
+.header .logoNav a img {            
+    z-index: 20;
+    position: relative;
+    width: clamp(30vw, 40vw, 90vw);
 }
 
 .header .logoNav .navmenu .btn-nav {
@@ -101,6 +118,7 @@ a:hover, button:hover {
 .header .logoNav .navmenu {
     display: flex;
     position: relative;
+    margin-right: 12rem;
 }
 
 .nav__menu {    
@@ -143,21 +161,15 @@ a:hover, button:hover {
     color: hsl(0, 0%, 100%);
     transition: 1s;
    
-
 }
 
-.header .mobNav {
-    color: hsl(0, 0%, 100%);
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-}
+
 
 .header .subtitle {       
     display: grid;
     align-content: center;
-    width: 100%;
-    padding-top: 10rem;
+    max-width: 80rem;   
+    margin-top: 15rem;
 
 
 }
@@ -168,13 +180,14 @@ a:hover, button:hover {
     color: #fff;
     border: 2px solid #fff;
     padding: 2.5rem 2.2rem 1.7rem;
-    font-size: 5rem;
+    font-size: 7rem;
     line-height: 0.95;
     width: 100%;
-    max-width: 48rem;
+    max-width: 70rem;
     font-family: 'Josefin Sans', sans-serif ;
     font-weight: 300;
     text-transform: uppercase;
+    
 
 }
 
@@ -188,7 +201,7 @@ a:hover, button:hover {
     position: relative;
     align-items: center;
     justify-content: center;        
-    padding: 2rem 10rem 0 26.5rem;
+    padding: 2rem 10rem 0 6rem;
     width: 100%;
 
 }
@@ -381,6 +394,10 @@ footer .r-column p {
 
     /* Headline */
 
+    .header .logoNav .navmenu {
+        margin-right: 5rem;
+    }
+
     
     
     .headline {
@@ -481,13 +498,9 @@ footer .r-column p {
 
 
 
-    .header .logoNav  {
-        flex-direction: column;
-    }
 
-    .header .logoNav .nav__menu {
-        margin-top: 2rem;
-    }
+
+
 
     .header .subtitle h1 {
         font-size: 4rem;
@@ -588,13 +601,13 @@ footer .r-column p {
         position: absolute;
         top: -100px;
         grid-auto-flow: unset;
-        left: -95vw;
+        left: -105vw;
         height: 150vh;
         -webkit-transition: all 0.8s;
         transition: all 0.8s;
         z-index: 10;
-        width: 150vw;
-        padding: 22rem 3.4rem 0;        
+        width: 200vw;
+        padding: 22rem 0rem 0 clamp(20vw, 25vw, 30vw);        
         display: grid;
         -ms-flex-line-pack: start;
         align-content: start;
@@ -603,7 +616,7 @@ footer .r-column p {
     }
 
     .nav__menu-item {    
-        font-size: 2.4rem;   
+        width: 100%;         
         font-family: "Josefin Sans", sans-serif;
         font-weight: 300;
         text-transform: uppercase;
@@ -629,15 +642,7 @@ footer .r-column p {
 
  
 
-    /* .header .logoNav nav { 
-        display: flex;
-        justify-content: flex-end;
-        position: relative;   
-        width: 26px; 
-        margin-left: clamp(10px, 300%, 150px);
-       
-                     
-    } */
+
 
   
 
@@ -675,7 +680,7 @@ footer .r-column p {
     }
 
     .header .subtitle h1 {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     .headline {
@@ -770,9 +775,19 @@ footer .r-column p {
                  
         
     } 
+
+    .nav__menu {
+        padding-left: clamp(60vw, 100vw, 130vw);
+        left: -170vw;
+    }
 }
 
 @media (max-width: 460px) {
+
+    .nav__menu {
+        padding-left: 90vw;
+        left: -160vw;
+    }
 
     .headline .leaderVR {
         padding: 2rem 1rem 0;
@@ -788,6 +803,14 @@ footer .r-column p {
 
 
 @media (max-width: 420px) {
+
+    .nav__menu {
+        padding-left: 115vw;
+        left: -180vw;
+        width: 290vw;
+    }
+
+
     .header .subtitle h1 {        
         font-size: 2.7rem;
         padding: 2.5rem 1.6rem 1.7rem;
@@ -796,6 +819,12 @@ footer .r-column p {
 }
 
 @media (max-width: 360px) {
+
+    .nav__menu {
+        padding-left: 150vw;
+        left: -210vw;
+        width: 290vw;
+    }
 
     .header .subtitle h1 {        
         font-size: 2.2rem;
