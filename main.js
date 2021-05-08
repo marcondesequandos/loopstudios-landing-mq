@@ -2,7 +2,7 @@ const logonav = document.querySelector(".logoNav")
 const btn = document.querySelector(".btn-nav")
 const btIcon = document.querySelector(".bbtn-icon")
 const nav = document.querySelector(".nav__menu")
-const navItems = document.querySelectorAll(".navmenu-item")
+const navItems = document.querySelectorAll(".nav__menu-item")
 
 
 const toggleMenu = ()=> {
@@ -15,7 +15,7 @@ const toggleMenu = ()=> {
         if (item.style.animation) {
             item.style.animation = ""
         } else {
-            item.style.animation = `fadeInTop .7s ${index / 8 + 0.3}s`;            
+            item.style.animation = `fadeInTop .7s ${index / 8 + 0.5}s`;            
         }
 
      

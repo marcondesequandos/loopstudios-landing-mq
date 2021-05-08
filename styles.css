@@ -2,9 +2,8 @@
 
 * {
     margin: 0;
-    padding: 0;
+    padding: 0;    
     
-    font-size: 15px;
 }
 
 html {
@@ -48,24 +47,25 @@ a:hover, button:hover {
     display: grid;
     grid-auto-flow: row;
     justify-items: center;
-    grid-gap: 9.6rem;
+    grid-gap: 15.8rem;
 }
 
 /* Header Start */
 
 .header {
     width: 100%;
-    height: 80vh;        
-    padding: 6rem 20rem 6rem 6rem;
+    height: 65rem;        
+    padding: 6.4rem 5.5rem;
     position: relative;       
-    background: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.295)), url(images/desktop/image-hero.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url(images/desktop/image-hero.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     min-width: 0;   
     min-height: 0;
+    display: grid;
     align-items: start;
-    justify-items: center;
+    justify-items: center;     
     overflow: hidden;
     
 }
@@ -88,23 +88,37 @@ a:hover, button:hover {
     align-items: center;
     justify-content: space-between;    
     max-width: 111rem;
+    width: 100%;
     padding: 0;
     top: 0;
     left: 0;
+    grid-gap: 3.3rem;
 }
 
 .header .logoNav .lsLogo {   
+    width: clamp(144px, 30%, 192px);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    width: clamp(144px, 70%, 172px);    
-    margin-right: 50px;    
-    z-index: 20;
+    margin-right: 50px;
+    
 }
 
 .header .logoNav a img {            
     z-index: 20;
     position: relative;
-    width: clamp(30vw, 40vw, 90vw);
+    width: clamp(110px, 100%, 192px);
+    
+}
+
+.nav__menu-item {
+    color: #fff;
+    font-size: 1.5rem;
+
+    
 }
 
 .header .logoNav .navmenu .btn-nav {
@@ -115,11 +129,7 @@ a:hover, button:hover {
     
 }
 
-.header .logoNav .navmenu {
-    display: flex;
-    position: relative;
-    margin-right: 12rem;
-}
+
 
 .nav__menu {    
     background-color: unset;
@@ -128,7 +138,7 @@ a:hover, button:hover {
     height: unset;
     display: grid;
     grid-auto-flow: column;
-    grid-gap: 2rem;
+    grid-gap: 3.3rem;
     align-content: start;
     justify-items: start;
     padding: 0;
@@ -151,15 +161,15 @@ a:hover, button:hover {
 
 
 
-.header .logoNav .nav__menu li {
-    margin-right: 2.5rem;
+.header .logoNav .nav__menu li {    
     position: relative;
+    font-size: 1.5rem;
     
 }
 
 .header .logoNav .nav__menu li a {
     color: hsl(0, 0%, 100%);
-    transition: 1s;
+    transition: 1s;  
    
 }
 
@@ -168,8 +178,9 @@ a:hover, button:hover {
 .header .subtitle {       
     display: grid;
     align-content: center;
-    max-width: 80rem;   
-    margin-top: 15rem;
+    max-width: 111rem;
+    width: 100%;   
+    margin-top: 5rem;
 
 
 }
@@ -179,11 +190,10 @@ a:hover, button:hover {
     
     color: #fff;
     border: 2px solid #fff;
-    padding: 2.5rem 2.2rem 1.7rem;
-    font-size: 7rem;
-    line-height: 0.95;
-    width: 100%;
-    max-width: 70rem;
+    padding: 3.8rem 3.8rem 2.8rem;
+    font-size: 7.2rem;
+    line-height: 0.97;    
+    max-width: 65rem;
     font-family: 'Josefin Sans', sans-serif ;
     font-weight: 300;
     text-transform: uppercase;
@@ -197,18 +207,18 @@ a:hover, button:hover {
 /* Headline */
 
 .headline {
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;        
-    padding: 2rem 10rem 0 6rem;
-    width: 100%;
+    display: grid;
+    grid-auto-flow: column;        
+    padding: 0 5.5rem;
+    max-width: 122rem;
+    grid-gap: 0;
 
 }
 
-.headline .hImgCont {
-    position: relative;
-    width: 100%;
+.headline .hImgCont img {
+
+    width: 72.9rem;
+
       
           
       
@@ -217,29 +227,27 @@ a:hover, button:hover {
 
 
 .headline .leaderVR {   
-    text-align: left; 
-    position: relative;           
-    margin: 20rem 6rem 0 -11rem;                
-    padding: 7rem;
-    background-color: hsl(0, 0%, 100%);
-    z-index: 2;
-    width: 100%;
+    display: grid;
+    align-self: end;
+    padding: 9.6rem 0 0 9.6rem;
+    width: 143%;
+    margin-left: -16rem;                
+    background-color: hsl(0, 0%, 100%);    
+    text-align: left;                
+    grid-gap: 2.6rem;
 }
 
 .headline .leaderVR h2 {
-    font-size: 3rem;
+    font-size: 4.8rem;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    width: 25rem;
-
+    text-transform: uppercase;       
 }
 
-.headline .leaderVR p {
+.headline .leaderVR p {    
     color: hsl(0, 0%, 55%);    
-    line-height: 1.5;    
-    width: 25rem;
+    line-height: 1.68;        
+    padding: 0;
     
 }
 
@@ -394,48 +402,50 @@ footer .r-column p {
 
     /* Headline */
 
-    .header .logoNav .navmenu {
-        margin-right: 5rem;
+    .container {
+        grid-gap: 12.8;
+    }   
+
+    .header .subtitle h1 {
+       
+        font-size: 6.4rem;
+        width: 100%;
+        max-width: 56rem;
     }
 
+   
     
     
     .headline {
-        flex-direction: column;
-        justify-content: center;
-        padding: 8rem 2rem 0rem;
+        grid-gap: 6.4rem;
+        max-width: 92rem;
+        grid-auto-flow: row;        
+        padding: 0 5.5rem;
 
     }
+ 
 
-    .headline .hImgCont {  
-        max-width: 55rem;               
-                                    
+    .headline .hImgCont img{
+        width: 100%;
+    }
+
+    .headline .leaderVR {        
+        grid-gap: 1.6rem;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+    }
+
+ 
+
+    .headline .leaderVR h2 {
+        font-size: 4rem;    
         
     }
 
-    .headline .hImgCont img{
-        max-width: 70rem;
-    }
-
-
-
-    .headline .leaderVR {  
-        text-align: center;      
-        margin: 0;
-        padding: 4rem 0 0 0;
-        width: 80%;           
-
-    }
-
-    .headline .leaderVR h2 {
-        font-size: 2.7rem;
-        width: 100%;
-        margin-bottom: 1rem;
-
-    }
-
     .headline .leaderVR p {   
-        width: 100%;
+        padding: 0 1.5rem;
 
     }
 
@@ -496,16 +506,6 @@ footer .r-column p {
 
 @media (max-width: 850px) {
 
-
-
-
-
-
-
-    .header .subtitle h1 {
-        font-size: 4rem;
-
-    }
     
     footer {
         flex-direction: column;      
@@ -546,21 +546,24 @@ footer .r-column p {
 
 @media (max-width: 750px) {
 
+    .container {
+        grid-gap: 9.6rem;
+    }
+
     .header {
         background-image: url(../images/mobile/image-hero.jpg);
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 100%;
         padding: 4rem 2.4rem;
         height: 65rem;
         width: 100%;
         background-position: center;
-        position: relative;
-        display: -ms-grid;
+        position: relative;        
         display: grid;
         justify-items: center;
         min-width: 0;
         min-height: 0;
-        overflow: hidden;
+        overflow: hidden;        
     
     }
 
@@ -577,11 +580,8 @@ footer .r-column p {
 
   
 
-
-    .logoNav--scroll {
-        position: fixed;
-        background-color: black;        
-        width: 100rem;
+    .logoNav--scroll {        
+        background-color: black;                
         padding: 3rem 2.4rem;
         z-index: 10;
     }
@@ -615,8 +615,9 @@ footer .r-column p {
         
     }
 
-    .nav__menu-item {    
-        width: 100%;         
+ 
+    .nav__menu-item {
+        font-size: 2.4rem;                     
         font-family: "Josefin Sans", sans-serif;
         font-weight: 300;
         text-transform: uppercase;
@@ -624,6 +625,7 @@ footer .r-column p {
         position: relative;        
         transition: all 0.2s;
     }
+    
 
     
     @keyframes fadeInTop {
@@ -637,6 +639,25 @@ footer .r-column p {
         }
     }
 
+    .header .subtitle {
+        width: 100%;
+        max-width: unset;
+        align-content: center;
+        height: 85%;
+    }
+
+    .header .subtitle h1 {
+        padding: 2.5rem 2.2rem 1.7rem;
+        font-size: clamp(4rem, calc(8vw + 1rem), 5.6rem);
+        line-height: 0.95;
+        width: 100%;
+        max-width: 48rem;
+    }
+
+
+    .headline .leaderVR h2 {
+        font-size: 3.2rem;
+    }
     
   
 
@@ -675,26 +696,15 @@ footer .r-column p {
 
 
 
-    .header .subtitle {
-        max-width: 30rem;
-    }
+ 
 
-    .header .subtitle h1 {
-        font-size: 4rem;
-    }
 
-    .headline {
-        padding: 5rem 1.5rem 1rem;
-    }
 
-    .headline .hImgCont {
-        width: 100%;
-    }
+  
 
-    .headline .leaderVR {
-        width: 100%;
-    }
 
+
+ 
  
 
     .portfolio {
@@ -743,6 +753,16 @@ footer .r-column p {
     
 }
 
+@media (max-width: 700px) {
+    .headline {
+        padding: 0 2.4rem;
+        grid-gap: 4.4rem;
+    }
+
+}
+
+
+
 @media (max-width: 650px) {
 
     .portfolio {
@@ -782,80 +802,35 @@ footer .r-column p {
     }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 374px) {
 
-    .nav__menu {
-        padding-left: 90vw;
-        left: -160vw;
-    }
-
-    .headline .leaderVR {
-        padding: 2rem 1rem 0;
-    }
-    .headline .leaderVR h2 {
-        font-size: 2rem;
+    .header {
+        background-position: center top;
+        height: 55rem;
     }
 
-    .headline .leaderVR p {
-        font-size: 0.8rem;
+    .header .subtitle {
+        height: 78.5%;
     }
+
+    .header .subtitle h1 {
+        font-size: 3.2rem;
+    }
+
+
 }
 
 
-@media (max-width: 420px) {
-
-    .nav__menu {
-        padding-left: 115vw;
-        left: -180vw;
-        width: 290vw;
-    }
-
-
-    .header .subtitle h1 {        
-        font-size: 2.7rem;
-        padding: 2.5rem 1.6rem 1.7rem;
-
-    }
-}
-
-@media (max-width: 360px) {
-
-    .nav__menu {
-        padding-left: 150vw;
-        left: -210vw;
-        width: 290vw;
-    }
-
-    .header .subtitle h1 {        
-        font-size: 2.2rem;
-        padding: 2.5rem 1.6rem 1.7rem;
-
-    }
-
-    .portfolio .mobpcard-container .card {
-        padding-bottom: 0;
-    }
-
-    .portfolio .mobpcard-container .card img {
-        height: 100%;
-    }
 
 
 
-    .pStart h2 {
-        font-size: 2rem !important;
-       
-    }
 
-    .header .logoNav a img {
-        margin-right: 3rem;
-    }
 
-    .portfolio .mobpcard-container .card h2{
-        font-size: 1.3rem;
-    }
 
-}
+
+
+
+
 
 
 
