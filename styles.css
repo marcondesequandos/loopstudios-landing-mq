@@ -258,93 +258,152 @@ a:hover, button:hover {
 
 
 .portfolio {
-    width: 100%;         
-    padding: 5rem 10rem 12rem 7rem;
-    display: flex; 
-    justify-content: center;                 
-
-}
-
-.pcontainer {
-    max-width: 100rem;
-}
-
-.portfolio .pStart {
-    display: flex;  
-    justify-content: space-between;
-    padding-bottom: 3rem;    
-}
-
-.portfolio .pStart h2 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 300;
-
-}
-
-.portfolio .pStart .btn-seeAll {      
-    text-transform: uppercase;
-    background-color:hsl(0, 0%, 100%);
-    font-family: 'Alata', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.3rem;
-    border: solid 1px black;   
-    padding: 0.6rem 2.8rem;
-    
-    
-}
-
-.portfolio .mob-btncont {
-    display: none;
-}
-
-.portfolio .mob-seeAll {
-       
-    text-transform: uppercase;
-    background-color:hsl(0, 0%, 100%);
-    font-family: 'Alata', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.3rem;
-    border: solid 1px black;   
-    padding: 0.6rem 2.8rem;
-    
-    
-}
-
-.portfolio .mobpcard-container {
-   display: none;
-}
-
-.portfolio .pcard-container {
+    width: 100%;
+    max-width: 122rem;         
+    margin: 2.5rem 0;
+    padding: 0 5.5rem;
+    grid-template-areas: 
+        "heading button"
+        "cards cards";
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 1.4rem;
+    align-items: center; 
+    text-align: left;
+    grid-gap: 8rem;
+
+}
+
+.portTitle {
+    font-size: 4.8rem;
+    color: black;
+    line-height: 1;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.btn-seeAll {
+    grid-area: button;
+    justify-self: end;
+    text-transform: uppercase;
+    border: 1.5px solid black;
+    padding: 1rem 3.8rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    transition: all 0.8s
+}
+
+.pcard-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 3rem;
+    grid-area: cards;
+    text-align: left;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;    
+}
+
+.card {    
+    height: 45rem;
+    padding: 3rem 4rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    justify-content: start;
+    align-content: end;
+
+}
+
+.card::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.8s;
+    z-index: 0;
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0 , 0.5),
+      transparent
+    );
+    transition: all 0.8s;
+}
+
+.card:hover::before {
+    
+      transform: scale(1.05);
+    }
+.card:hover::after {
+      background-color: rgba(255, 255, 255, 0.7);
+      background-image: unset;
+    }
+
+.card:hover > .card-name {
+      color: black;
+      transition: all 0.8s;
+ }
+
+ .card-name {
+     font-size: 3.2rem;
+     color: #fff;
+     line-height: 1;
+     position: relative;
+     z-index: 10;
+     font-family: "Josefin Sans", sans-serif;
+     text-transform: uppercase;
+
+ }
   
 
+.card--1::before {
+    background-image: url(images/desktop/image-deep-earth.jpg);
+}
+.card--2::before {
+    background-image: url(images/desktop/image-night-arcade.jpg);
+}
+.card--3::before {
+    background-image: url(images/desktop/image-soccer-team.jpg);
+}
+.card--4::before {
+    background-image: url(images/desktop/image-grid.jpg);
+}
+.card--5::before {
+    background-image: url(images/desktop/image-from-above.jpg);
+}
+.card--6::before {
+    background-image: url(images/desktop/image-pocket-borealis.jpg);
+}
+.card--7::before {
+    background-image: url(images/desktop/image-curiosity.jpg);
+}
+.card--8::before {
+    background-image: url(images/desktop/image-fisheye.jpg);
 }
 
-.portfolio .pcard-container .card {   
-    position: relative;    
-}
 
-.portfolio .pcard-container .card img {
-    filter:brightness(90%);
-    width: 100%;
-}
 
-.portfolio .pcard-container .card h2 {
-    position: absolute;
-    bottom: 10%;
-    left: 13%;
-    width: 50%;
-    color: hsl(0, 0%, 100%);
-    font-size: 2rem;
-    text-transform: uppercase;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 300;
-    
-}
+
+
+
+
+
 
 /* Portfolio End */
 
@@ -453,55 +512,7 @@ footer .r-column p {
 
     /* Portfolio Start */
 
-    .portfolio {         
-        padding: 8rem 4rem 8rem 4rem;                 
     
-    }
-    
-  
-    .portfolio .pcard-container {
-        display: none;
-
-    }
-
-    .portfolio .mobpcard-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-gap: 2rem;
-        
-    }
-    
-
-    .card  {
-        object-fit: cover;       
-        overflow: hidden;
-        width: 100%;
-
-       
-        
-    }
-
-
-
-    .portfolio .mobpcard-container .card img {
-        filter:brightness(90%);
-        width: 100%;
-
-    }
-    
-    .portfolio .mobpcard-container .card h2 {
-        position: absolute;
-        transform: translateY(-80px) translateX(20px);   
-        width: 13%;
-        color:hsl(0, 0%, 100%);
-        font-size: 1.7rem;
-        text-transform: uppercase;
-        font-family: 'Josefin Sans', sans-serif;
-        font-weight: 300;
-        
-    }
-
 }
 
 @media (max-width: 850px) {
@@ -707,49 +718,6 @@ footer .r-column p {
  
  
 
-    .portfolio {
-        display: flex;
-        flex-direction: column;        
-        text-align: center;
-        justify-content: center;
-        padding: 5rem 1.5rem;
-    }
-
-    .portfolio .pStart {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      
-        
-    }
-
-    .portfolio .pStart h2 {
-        font-size: 2.5rem;              
-    }
-
-    .portfolio .pStart .btn-seeAll {
-        display: none;
-
-    }
-
-    .portfolio .mob-btncont {
-        display: flex;
-        justify-content: center;
-    }
-
-    .portfolio .mob-seeAll {                  
-        display: block;
-        bottom: 0;
-        margin-top: 2rem;
-        
-    }
-
-
-    .portfolio .mobpcard-container .card h2 {
-        text-align: left;
-        width: 20%;
-        font-size: 1.8rem;
-    } 
     
 }
 
@@ -765,36 +733,7 @@ footer .r-column p {
 
 @media (max-width: 650px) {
 
-    .portfolio {
-        padding: 5rem 1.5rem;
-    }
-    
-    .portfolio .mobpcard-container {
-        grid-template-columns: 1fr;
-        grid-gap: 1.5rem;
-      
-    }
-
-    .portfolio .mobpcard-container .card {  
-        height: 8rem;      
-        display: grid;
-        grid-gap: 1rem; 
-        padding-bottom: 2rem;
-    }
-
-    .portfolio .mobpcard-container .card img {
-        filter:brightness(80%);
-      
-    }
-
-    .portfolio .mobpcard-container .card h2 {
-        font-size: 1.6rem;  
-        margin: 0 0 5rem 2rem;
-        transform: translateY(60px) translateX(-10px);
-        width: 50%;   
-                 
-        
-    } 
+   
 
     .nav__menu {
         padding-left: clamp(60vw, 100vw, 130vw);
