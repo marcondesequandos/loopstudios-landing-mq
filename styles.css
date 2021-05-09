@@ -82,7 +82,7 @@ a:hover, button:hover {
 
 
 
-.header .logoNav {
+.logoNav {
     display: flex;
     position: relative;    
     align-items: center;
@@ -161,7 +161,7 @@ a:hover, button:hover {
 
 
 
-.header .logoNav .nav__menu li {    
+.nav__menu-item {    
     position: relative;
     font-size: 1.5rem;
     
@@ -297,12 +297,13 @@ a:hover, button:hover {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    margin-top: 0;
     grid-gap: 3rem;
     grid-area: cards;
-    text-align: left;
-    width: 100%;
+    text-align: left;    
     min-width: 0;
-    min-height: 0;    
+    min-height: 0;
+    overflow: hidden;    
 }
 
 .card {    
@@ -339,7 +340,7 @@ a:hover, button:hover {
     width: 100%;
     z-index: 5;
     background-image: linear-gradient(
-      to right,
+      to top,
       rgba(0, 0, 0 , 0.5),
       transparent
     );
@@ -411,46 +412,69 @@ a:hover, button:hover {
 
 footer {
     background-color: hsl(0, 0%, 0%);
-    padding: 2.5rem 7rem;
+    padding: 4.5rem 5.5rem;
     color:hsl(0, 0%, 100%);    
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
+    display: flex;
+    justify-content: center;    
     width: 100%;
 }
 
-footer .logocont a img {
-    width: 150px;
+.ft-container {
+    display: grid;
+    width: 100%;
+    grid-template-areas: 
+        "logo social"
+        "links copyright";
+    justify-content: space-between;
+    justify-items: unset;
+    grid-gap: 2.2rem;
+    max-width: 111rem;
+}
+
+.ftLogo {
+    grid-area: logo;
+    width: 14.4rem;
+}
+
+ .navmenuf {
+     grid-area: links;
+        
+}
+
+.navmenuf__links-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 3.3rem;
+    margin-top: 0;
+    text-align: center;
+}
+
+.navmenuf__links-list-item {
+    font-size: 1.5rem;
+    color: #fff;
+    position: relative;
+
+}
+
+.social-btns {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1.6rem;
+    grid-area: social;
+    justify-self: right;
+    margin-top: 0;
+    align-items: center;
+}
+
+.ft-copy {
+    color: dimgray;
+    grid-area: copyright;
+    justify-self: right;
+    margin-top: 0;
 }
 
 
 
-footer .l-column .navmenuf {
-    display: flex;
-    justify-content: space-between;    
-    margin: 1rem 9rem 0 0;
-    width: 100%;        
-}
-
-
-
-footer .r-column .social-btns {
-    display: flex;        
-    justify-content: flex-end;
-}
-
-footer .r-column .social-btns a img {
-    padding-left: 1.25rem;
-  
-}
-
-footer .r-column p {     
-    padding-top: 1.25rem;
-    color: hsl(0, 0%, 41%);
-    margin-left: 2rem;
-  
-}
 
 
 /* Footer end */
@@ -459,11 +483,13 @@ footer .r-column p {
 
 @media (max-width: 1200px) {
 
+    .container {
+        grid-gap: 12.8rem;
+    }
+    
     /* Headline */
 
-    .container {
-        grid-gap: 12.8;
-    }   
+ 
 
     .header .subtitle h1 {
        
@@ -512,47 +538,126 @@ footer .r-column p {
 
     /* Portfolio Start */
 
+    .portfolio {
+        grid-gap: 6.4rem;
+        margin: unset;
+        
+    }
+
+    .portTitle {
+        font-size: 4rem;
+    }
+
+    .pcard-container {
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+
+    }
+
+    .card {
+        height: 15rem;
+        padding: 0 0 2rem 2rem;
+    }
+
+    .card::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 5;
+        background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0 , 0.5),
+          transparent
+        );
+        transition: all 0.8s;
+    }
+
+
+    .card-name {
+        font-size: 2.4rem;
+    }
+
+
+
+
+    .card--1::before {
+        background-image: url(images/mobile/image-deep-earth.jpg);
+    }
+    .card--2::before {
+        background-image: url(images/mobile/image-night-arcade.jpg);
+    }
+    .card--3::before {
+        background-image: url(images/mobile/image-soccer-team.jpg);
+    }
+    .card--4::before {
+        background-image: url(images/mobile/image-grid.jpg);
+    }
+    .card--5::before {
+        background-image: url(images/mobile/image-from-above.jpg);
+    }
+    .card--6::before {
+        background-image: url(images/mobile/image-pocket-borealis.jpg);
+    }
+    .card--7::before {
+        background-image: url(images/mobile/image-curiosity.jpg);
+    }
+    .card--8::before {
+        background-image: url(images/mobile/image-fisheye.jpg);
+    }
+
     
 }
 
 @media (max-width: 850px) {
 
-    
+    .pcard-container {
+        grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+    }
+
     footer {
-        flex-direction: column;      
+        padding: 5.6rem 2.4rem; 
+     
+    }
+
+    .ft-container {
+        justify-items: center;
+        grid-template-areas: unset;
+        justify-content: unset;        
+        grid-gap: unset;
+    }
+
+    .ftLogo {
+        grid-area: unset;
+    }
+
+    .navmenuf {
+        grid-area: unset;
+    }
+
+    .navmenuf__links-list {               
+        grid-auto-flow: row;
+        grid-gap: 2rem;
+        margin-top: 3.5rem;
+    }
+
+    .social-btns {
+        margin-top: 5rem;
+        justify-self: unset;
+        grid-area: unset;
+    }
+
+    .ft-copy {
+        grid-area: unset;
+        justify-self: unset;
+        margin-top: 1.4rem;
         text-align: center;
-        padding: 3.73rem 1.6rem;
-        
     }
 
 
-
-    footer .l-column .navmenuf {
-        flex-direction: column;
     
-
-  
-    }
-
-    footer .logocont a img {
-        margin-bottom: 1.3rem;
-    }
-
-    footer .l-column .navmenuf li {
-        margin-bottom: 1.3rem;
-    }
-
-    footer .r-column .social-btns {
-        padding-left: 0;
-        margin-top: 1.8rem;
-        position: relative;
-        justify-content: center;
-    }
-
-    footer .r-column .social-btns a img {
-        justify-content: space-between;
-
-    }
+    
 }
 
 @media (max-width: 750px) {
@@ -578,11 +683,11 @@ footer .r-column p {
     
     }
 
-    .header .logoNav  {
+    .logoNav  {
         position: fixed;
         flex-direction: row;
         padding: 4rem 2.4rem;
-        z-index: 10;
+        z-index: 11;
         width: 100%;
       
 
@@ -594,7 +699,7 @@ footer .r-column p {
     .logoNav--scroll {        
         background-color: black;                
         padding: 3rem 2.4rem;
-        z-index: 10;
+        z-index: 11;
     }
 
 
@@ -703,6 +808,45 @@ footer .r-column p {
         display: flex;
         z-index: 20;
         
+    }
+
+    .portfolio {
+        padding: 0 2.4rem;
+        grid-gap: 3.2rem;
+        text-align: center;
+        grid-template-areas: 
+            "heading heading"
+            "cards cards"
+            "btn btn";
+
+
+
+    }
+
+    .portTitle {
+        font-size: 3.2rem;
+        justify-self: center;
+        grid-area: heading;
+    }
+
+    .btn-seeAll {
+        grid-area: btn;
+        justify-self: center;
+
+    }
+
+    .pcard-container {
+        margin-top: 1.6rem;
+        grid-gap: 2.4rem;
+        grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+        
+
+    }
+
+
+
+    .card {
+        height: 12rem;
     }
 
 
