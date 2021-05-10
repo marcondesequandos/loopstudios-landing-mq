@@ -8,8 +8,7 @@ const navItems = document.querySelectorAll(".nav__menu-item")
 const toggleMenu = ()=> {
 
     nav.classList.toggle("nav__menu--hidden")
-    document.body.classList.toggle("disable-scroll")
-    // document.querySelector(".disable-scroll").style.overflow = "hidden"
+    document.body.classList.toggle("disable-scroll")    
 
     navItems.forEach((item, index) => {
         if (item.style.animation) {
