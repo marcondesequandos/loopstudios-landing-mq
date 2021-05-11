@@ -508,12 +508,12 @@ footer {
     left: 0;
     background-color: #fff;    
     transform: scaleX(0);
-    -webkit-transform: scaleX(0);
+    
 }
 
 .social-btn:hover::before, .social-btn:focus::before {
     transform: scaleX(1);
-    -webkit-transform: scaleX(1);
+    
 }
 
 .social-btn--twitter::before {
